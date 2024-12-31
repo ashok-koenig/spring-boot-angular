@@ -7,3 +7,6 @@ CREATE TABLE `fullstackdb`.`products` (
   `category` VARCHAR(100) NOT NULL,
   `price` DOUBLE NOT NULL,
   PRIMARY KEY (`id`));
+
+## MySQL Driver URL
+https://downloads.mysql.com/archives/c-j/
