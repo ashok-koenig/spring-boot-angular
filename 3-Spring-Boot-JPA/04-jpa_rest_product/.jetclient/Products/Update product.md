@@ -1,7 +1,7 @@
 ```toml
 name = 'Update product'
 method = 'PUT'
-url = 'http://localhost:8080/products/3'
+url = 'http://localhost:8080/products/4'
 sortWeight = 4000000
 id = 'b7a4e136-1153-4df5-84a9-3b62ae8dbc96'
 
@@ -9,8 +9,8 @@ id = 'b7a4e136-1153-4df5-84a9-3b62ae8dbc96'
 type = 'JSON'
 raw = '''
 {
-  title: "iPhone 15",
+  title: "iPhone 14",
   category: "Smartphone",
-  price: 56565
+  price: 45454
 }'''
 ```
