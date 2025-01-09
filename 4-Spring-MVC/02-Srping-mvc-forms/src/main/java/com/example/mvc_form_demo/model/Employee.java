@@ -1,10 +1,24 @@
 package com.example.mvc_form_demo.model;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+
 public class Employee {
+    @NotEmpty(message = "Name is required")
     private String name;
+
+    @NotEmpty(message = "Gender is required")
     private String gender;
+
+    @NotEmpty(message = "Email is required")
+    @Email(message = "Email must be valid")
     private String email;
+
+    @NotEmpty(message = "Department is required")
     private String department;
+
+    private Address address;
+
 
     public Employee(String name, String gender, String email, String department) {
         this.name = name;
@@ -15,6 +29,14 @@ public class Employee {
 
     public Employee() {
 
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public String getName() {
