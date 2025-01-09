@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script th:src="@{/js/myscript.js}"></script>
+    <style>
+        h1 {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: green;">Working with Spring MVC Application</h1>
+    <div class="mydiv">
+        <h3>Working with external style sheet into view page.</h3>
+    </div>
+    <button onclick="handleClick()">Click me</button>
+    <a th:href="@{/about}">Click here to open About page</a>
+    <hr/>
+    <img th:src="@{/images/pic1.jpg}" alt="Image not found"/>
+</body>
+</html>

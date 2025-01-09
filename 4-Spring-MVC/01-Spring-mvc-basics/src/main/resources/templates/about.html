@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>About Page</title>
+</head>
+<body>
+    <h1>This is About page</h1>
+    <h2 th:text="'First Name: '+  ${first_name}"></h2>
+    <h2 th:text="'Last Name: '+  ${last_name}"></h2>
+    <h2 th:text="'Age: '+  ${age}"></h2>
+    <h3 th:if="${age > 18}">You are Adult</h3>
+    <h3 th:unless="${age > 18}">You are Child</h3>
+    <h2>Friends List</h2>
+    <ol>
+        <li th:each="friend : ${friends}" th:text="${friend}"></li>
+    </ol>
+
+    <h2>Person Detail</h2>
+    <p>Person Name: <span th:text="${person.name}"></span></p>
+    <p>Person Email: <span th:text="${person.email}"></span></p>
+    <p>Person Salary: <span th:text="${person.salary}"></span></p>
+
+    <h2>List of Employees</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Salary</th>
+        </tr>
+        <tr th:each="emp : ${employees}">
+            <td th:text="${emp.name}"></td>
+            <td th:text="${emp.email}"></td>
+            <td th:text="${emp.salary}"></td>
+        </tr>
+    </table>
+</body>
+</html>
