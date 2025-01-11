@@ -27,7 +27,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees/save")
-    public String saveEmployees(@Valid @ModelAttribute Employee employee, BindingResult result, Model model){
+    public String saveEmployees(@Valid @ModelAttribute("employee") Employee employee, BindingResult result, Model model){
 
         if(result.hasErrors()){
             String[] departments = {"Admin", "HR", "IT"};

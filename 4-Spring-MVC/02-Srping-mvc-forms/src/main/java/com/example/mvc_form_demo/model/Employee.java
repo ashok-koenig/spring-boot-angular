@@ -1,7 +1,8 @@
 package com.example.mvc_form_demo.model;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
+import com.example.mvc_form_demo.validation.EmailDomain;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
 
 public class Employee {
     @NotEmpty(message = "Name is required")
@@ -12,13 +13,22 @@ public class Employee {
 
     @NotEmpty(message = "Email is required")
     @Email(message = "Email must be valid")
+    @EmailDomain(value = "company.com", message = "Email domain must be company.com")
     private String email;
+
+    @NotEmpty(message = "Mobile number is required")
+    @Pattern(regexp = "^[0-9]{10}", message = "Mobile number must be 10 digits")
+    private String mobile;
 
     @NotEmpty(message = "Department is required")
     private String department;
 
-    private Address address;
+    @NotNull(message = "Salary is required")
+    @Min(value = 0, message = "Salary must be positive")
+    private Double salary;
 
+    @Valid
+    private Address address;
 
     public Employee(String name, String gender, String email, String department) {
         this.name = name;
@@ -29,6 +39,22 @@ public class Employee {
 
     public Employee() {
 
+    }
+
+    public  String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public Double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Double salary) {
+        this.salary = salary;
     }
 
     public Address getAddress() {
