@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login  - Product Management App</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container">
+
+    <div class="row mt-3">
+        <div class="col"></div>
+        <div class="col">
+            <h1>Register Form</h1>
+            <form th:action="@{/auth/save}" method="post" th:object="${member}">
+                <div class="mb-3">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-control"  placeholder="Enter First Name" th:field="*{firstName}">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" class="form-control"  placeholder="Enter Last Name" th:field="*{lastName}">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="text" class="form-control"  placeholder="Enter Email" th:field="*{email}">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control"  placeholder="Enter Password" th:field="*{password}">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-success">Register</button>
+                    <a th:href="@{/auth/login}">Already Registered? Login</a>
+                </div>
+            </form>
+
+        </div>
+        <div class="col"></div>
+    </div>
+
+</div>
+</body>
+</html>
