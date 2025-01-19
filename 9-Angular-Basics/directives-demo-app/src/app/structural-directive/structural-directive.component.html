@@ -1,0 +1,36 @@
+<h2>ngFor demo</h2>
+<h4>Friends List</h4>
+<!-- <p *ngIf="friends.length == 0">No Friends</p>
+<ol *ngIf="friends.length > 0">
+    <li *ngFor="let friend of friends">{{friend}}</li>
+</ol> -->
+<ol>
+    @for (friend of friends; track $index) {
+        <li>{{friend}}</li>
+    } @empty {
+        <p>No friends</p>
+    }
+</ol>
+
+<h2>ngIf demo</h2>
+<button (click)="toggleVisibility()">Toggle Visiblity</button>
+<!-- <p *ngIf="isVisible">This paragraph is conditionally visible</p> -->
+@if (isVisible) {
+    <p>This paragraph is conditionally visible</p>
+}
+
+<h2>Switch/case demo</h2>
+@switch (dayOfWeek) {
+    @case (1) {
+        <p>Sunday</p>
+    }
+    @case (2) {
+        <p>Monday</p>
+    }
+    @case (3) {
+        <p>Tuesday</p>
+    }
+    @default {
+        <p>Unknown</p>
+    }
+}

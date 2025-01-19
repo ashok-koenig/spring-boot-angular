@@ -1,0 +1,9 @@
+<h3>Working with Built-in Pipes</h3>
+<h4>Title: {{course.title | uppercase | summary}}</h4>
+<!-- <h4>Description: {{course.description | lowercase | slice:0:50}}</h4> -->
+<h4>Description: {{course.description | summary: 60 }} </h4>
+<h4>Number of Students: {{course.numberOfStudents | number}}</h4>
+<h4>Ratings: {{course.rating | number: "1.1-1"}}</h4>
+<h4>Price: {{course.price | currency: "INR": false }}</h4>
+<h4>Start Date: {{course.startDate | date: "dd-MM-YYYY HH:mm"}}</h4>
+<p>{{course | json}}</p>

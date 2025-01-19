@@ -1,0 +1,18 @@
+<h1>My To-Do's</h1>
+<div>
+    New item
+    <input type="text" [(ngModel)]="newItem" />
+    <button (click)="addTodoItem()">Add Item</button>
+</div>
+<hr>
+<h2>Todo List</h2>
+<ul>
+   @for (item of todoItems; track $index) {
+    <li>
+        <input type="checkbox" [checked]="item.completed" (change)="toggleCompletionStatus($index)" />
+       <span [class.completed]="item.completed">{{item.title}} </span> 
+    </li>
+    }@empty {
+        <p>No Todo item</p>
+    }
+</ul>
